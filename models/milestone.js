@@ -17,7 +17,6 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     desc: DataTypes.STRING,
     icon: DataTypes.STRING,
-    collection_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Milestone',

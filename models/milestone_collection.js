@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Milestone_Collection.init({
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    milestone_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Milestone_Collection',

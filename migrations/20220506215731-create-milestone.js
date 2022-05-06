@@ -17,9 +17,6 @@ module.exports = {
       icon: {
         type: Sequelize.STRING
       },
-      collection_id: {
-        type: Sequelize.INTEGER
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

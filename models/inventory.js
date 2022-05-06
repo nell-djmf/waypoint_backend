@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Inventory.init({
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    item_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Inventory',
