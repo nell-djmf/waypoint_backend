@@ -16,10 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   Inventory_Item.init({
     name: DataTypes.STRING,
     desc: DataTypes.TEXT,
+    icon: DataTypes.STRING,
     inventory_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Inventory_Item',
+    tableName: 'inventory_items'
   });
   return Inventory_Item;
 };

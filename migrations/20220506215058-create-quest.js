@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Quests', {
+    await queryInterface.createTable('quests', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -17,6 +17,15 @@ module.exports = {
       xp_gain: {
         type: Sequelize.INTEGER
       },
+      skill_affinity: {
+        type: Sequelize.STRING
+      },
+      skill_gain: {
+        type: Sequelize.INTEGER
+      },
+      icon: {
+        type: Sequelize.STRING
+      },
       user_id: {
         type: Sequelize.INTEGER
       },
@@ -31,6 +40,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Quests');
+    await queryInterface.dropTable('quests');
   }
 };

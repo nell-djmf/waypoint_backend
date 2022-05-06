@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Milestone_Collection',
+    tableName: 'milestone_collections'
   });
   return Milestone_Collection;
 };

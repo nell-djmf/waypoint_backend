@@ -17,10 +17,14 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     desc: DataTypes.TEXT,
     xp_gain: DataTypes.INTEGER,
+    skill_affinity: DataTypes.STRING,
+    skill_gain: DataTypes.INTEGER,
+    icon: DataTypes.STRING,
     quest_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Side_Quest',
+    tableName: 'side_quests'
   });
   return Side_Quest;
 };

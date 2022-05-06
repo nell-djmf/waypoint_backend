@@ -16,10 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   Milestone.init({
     title: DataTypes.STRING,
     desc: DataTypes.STRING,
+    icon: DataTypes.STRING,
     collection_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Milestone',
+    tableName: 'milestones'
   });
   return Milestone;
 };

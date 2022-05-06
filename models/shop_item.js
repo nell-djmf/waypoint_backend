@@ -16,10 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   Shop_Item.init({
     name: DataTypes.STRING,
     desc: DataTypes.TEXT,
+    icon: DataTypes.STRING,
     shop_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Shop_Item',
+    tableName: 'shop_items'
   });
   return Shop_Item;
 };
