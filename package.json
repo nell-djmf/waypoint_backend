@@ -1,0 +1,29 @@
+{
+  "name": "waypoint",
+  "version": "1.0.0",
+  "description": "By [Nell Flores](https://www.linkedin.com/mynetwork/) | [Github](https://github.com/nell-djmf)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nell-djmf/waypoint.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nell-djmf/waypoint/issues"
+  },
+  "homepage": "https://github.com/nell-djmf/waypoint#readme",
+  "dependencies": {
+    "@ngneat/falso": "^5.1.0",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  }
+}
