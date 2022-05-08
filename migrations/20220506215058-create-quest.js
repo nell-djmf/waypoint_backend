@@ -14,20 +14,18 @@ module.exports = {
       desc: {
         type: Sequelize.TEXT
       },
-      xp_gain: {
-        type: Sequelize.INTEGER
-      },
-      skill_affinity: {
+      skillAffinity: {
         type: Sequelize.STRING
       },
-      skill_gain: {
-        type: Sequelize.INTEGER
+      type: {
+        type: Sequelize.STRING
       },
       icon: {
         type: Sequelize.STRING
       },
-      user_id: {
-        type: Sequelize.INTEGER
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

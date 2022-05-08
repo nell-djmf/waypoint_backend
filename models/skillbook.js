@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Skillbook.belongsTo(models.User, {
+        foreignKey: 'userId'
+      })
     }
   }
   Skillbook.init({
@@ -20,7 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     int: DataTypes.INTEGER,
     wis: DataTypes.INTEGER,
     cha: DataTypes.INTEGER,
-    user_id: DataTypes.INTEGER
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Skillbook',

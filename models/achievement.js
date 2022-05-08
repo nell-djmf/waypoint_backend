@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Inventory extends Model {
+  class Achievement extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Inventory.init({
+  Achievement.init({
     userId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
@@ -22,18 +22,18 @@ module.exports = (sequelize, DataTypes) => {
         key: 'id'
       }
     },
-    itemId: {
+    milestoneId: {
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
-        model: 'items',
+        model: 'milestones',
         key: 'id'
       }
     }
   }, {
     sequelize,
-    modelName: 'Inventory',
-    tableName: 'inventories'
+    modelName: 'Achievement',
+    tableName: 'achievements'
   });
-  return Inventory;
+  return Achievement;
 };

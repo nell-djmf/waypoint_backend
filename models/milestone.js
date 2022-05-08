@@ -10,7 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Milestone.belongsToMany(models.User, {
+        through: models.Achievement,
+        as: 'collection_item',
+        foreignKey: 'milestoneId'
+      })
     }
   }
   Milestone.init({

@@ -9,7 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       con: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       str: {
         type: Sequelize.INTEGER
@@ -26,7 +26,7 @@ module.exports = {
       cha: {
         type: Sequelize.INTEGER
       },
-      user_id: {
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

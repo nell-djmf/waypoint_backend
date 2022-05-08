@@ -10,17 +10,25 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Quest.belongsTo(models.User, {
+        foreignKey: 'userId'
+      })
     }
   }
   Quest.init({
     name: DataTypes.STRING,
     desc: DataTypes.TEXT,
-    xp_gain: DataTypes.INTEGER,
-    skill_affinity: DataTypes.STRING,
-    skill_gain: DataTypes.INTEGER,
+    skillAffinity: DataTypes.STRING,
+    type: DataTypes.STRING,
     icon: DataTypes.STRING,
-    user_id: DataTypes.INTEGER
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Quest',
