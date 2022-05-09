@@ -1,6 +1,6 @@
 const { User, Quest } = require('../models')
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op
+
+
 
 const GetAllQuests = async (req, res) => {
   try {
@@ -40,7 +40,7 @@ const CreateNewQuest = async (req, res) => {
 
 const UpdateQuest = async (req, res) => {
   try {
-    const updatedQuest = await Quest.update(req.body, {
+    await Quest.update(req.body, {
       where: {
         id: req.params.quest
       }

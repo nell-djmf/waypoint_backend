@@ -36,3 +36,7 @@ Waypoint is an app that chronicles your own Hero's Journey. Set goals for yourse
 [ ] Quests now reward coins, or a random item
 
 [ ] Currency may be spent in the ingame shop to buy character items or avatar customizations
+
+## Credits
+
+[Date Constructor to YYYY-MM-DD format](https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd)

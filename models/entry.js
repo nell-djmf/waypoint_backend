@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Entry.init({
-    date: DataTypes.DATE,
+    date: DataTypes.DATEONLY,
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
     userId: {

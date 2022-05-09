@@ -5,8 +5,9 @@ const { User } = require('../models')
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const users = await User.findAll({ raw:true })
+
     const entries = [...Array(5)].map((_) => ({
-      date: new Date(),
+      date: new Date().toISOString().slice(0, 10),
       title: falso.randText(),
       content: falso.randParagraph(),
       userId: users[Math.floor(Math.random() * users.length)].id,
