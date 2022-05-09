@@ -1,6 +1,5 @@
-const { User, Entry, Quest, Milestone, Item, sequelize } = require('../models')
-const Sequelize = require('sequelize')
-const Op = Sequelize.Op
+const { User } = require('../models')
+
 
 const GetUsers = async (req, res) => {
   try {
@@ -13,26 +12,7 @@ const GetUsers = async (req, res) => {
 
 const GetOneUser = async (req, res) => {
   try {
-    const users = await User.findByPk(req.params.me, {
-      include: [
-        {
-          model: Entry,
-        },
-				{
-          model: Quest,
-        },
-				{
-          model: Item,
-					as: 'inv_owner'
-        },
-				{
-          model: Milestone,
-					as: 'milestone_collection'
-        },
-
-      ]
-    })
-
+    const users = await User.findByPk(req.params.me)
     res.send(users)
   } catch (error) {
     throw error
