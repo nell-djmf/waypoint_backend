@@ -1,4 +1,4 @@
-const { User, Milestone } = require('../models')
+const { User, Milestone, Achievement } = require('../models')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
@@ -28,7 +28,20 @@ const GetUserAchievements = async (req, res) => {
   }
 }
 
+const UpdateAchievements = async (req, res) => {
+  try {
+  await Achievement.create(req.body, {
+    fields:["userId", "milestoneId"]
+  })
+  
+    res.send('Milestones added to Achievements!')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 module.exports = {
 	GetAllMilestones,
-  GetUserAchievements
+  GetUserAchievements,
+  UpdateAchievements
 }

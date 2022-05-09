@@ -1,4 +1,4 @@
-const { User, Item } = require('../models')
+const { User, Item, Inventory } = require('../models')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
 
@@ -28,7 +28,34 @@ const GetUserInventory = async (req, res) => {
   }
 }
 
+const UpdateInventory = async (req, res) => {
+  try {
+  await Inventory.bulkCreate(req.body, {
+    fields:["userId", "itemId"]
+  })
+  
+    res.send('Items added to Inventory!')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const RemoveFromInventory = async (req, res) => {
+  try {
+    await Inventory.destroy({
+      where:{itemId: req.params.item,
+      userId:req.params.user}
+    })
+    res.send('Item removed from Inventory!')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 module.exports = {
 	GetAllItems,
-  GetUserInventory
+  GetUserInventory,
+  UpdateInventory,
+  RemoveFromInventory
 }
