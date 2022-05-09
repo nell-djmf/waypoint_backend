@@ -10,7 +10,7 @@ module.exports = {
     
     const achievements = milestoneList.map((a) => ({
       userId: users[Math.floor(Math.random() * users.length)].id,
-      milestoneId: milestoneList[Math.floor(Math.random() * milestoneList.length)].id,
+      milestoneId: a.id,
       createdAt: new Date(),
       updatedAt: new Date()
     }))

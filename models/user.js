@@ -16,9 +16,6 @@ module.exports = (sequelize, DataTypes) => {
       User.hasMany(models.Quest, {
         foreignKey: 'userId' 
       }),
-      User.hasOne(models.Skillbook, {
-        foreignKey: 'userId'
-      }),
       User.belongsToMany(models.Item, {
         as: 'inv_owner',
         through: models.Inventory,

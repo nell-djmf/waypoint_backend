@@ -10,7 +10,7 @@ module.exports = {
     
     const inventories = invList.map((a) => ({
       userId: users[Math.floor(Math.random() * users.length)].id,
-      itemId: invList[Math.floor(Math.random() * invList.length)].id,
+      itemId: a.id,
       createdAt: new Date(),
       updatedAt: new Date()
     }))

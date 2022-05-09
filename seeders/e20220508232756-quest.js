@@ -13,14 +13,18 @@ module.exports = {
         type: "primary",
         icon: "https://i.imgur.com/YOPY27D.png",
         userId: users[Math.floor(Math.random() * users.length)].id,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
-        title: "Work out",
+        name: "Work out",
         desc: "Run a mile every day",
         skillAffinity: "str",
         type: "task",
         icon: "https://i.imgur.com/YOPY27D.png",
         userId: users[Math.floor(Math.random() * users.length)].id,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
   ]
     
