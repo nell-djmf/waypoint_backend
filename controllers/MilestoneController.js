@@ -21,7 +21,6 @@ const GetUserAchievements = async (req, res) => {
         },
       ]
     })
-
     res.send(achievements)
   } catch (error) {
     throw error
@@ -31,7 +30,7 @@ const GetUserAchievements = async (req, res) => {
 const UpdateAchievements = async (req, res) => {
   try {
   await Achievement.create(req.body, {
-    fields:["userId", "milestoneId"]
+    fields: ["userId", "milestoneId"]
   })
   
     res.send('Milestones added to Achievements!')

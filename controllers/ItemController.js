@@ -21,7 +21,6 @@ const GetUserInventory = async (req, res) => {
         }
       ]
     })
-
     res.send(inv)
   } catch (error) {
     throw error
@@ -33,7 +32,6 @@ const UpdateInventory = async (req, res) => {
   await Inventory.bulkCreate(req.body, {
     fields:["userId", "itemId"]
   })
-  
     res.send('Items added to Inventory!')
   } catch (error) {
     console.log(error)
@@ -43,8 +41,10 @@ const UpdateInventory = async (req, res) => {
 const RemoveFromInventory = async (req, res) => {
   try {
     await Inventory.destroy({
-      where:{itemId: req.params.item,
-      userId:req.params.user}
+      where: {
+        itemId: req.params.item,
+        userId:req.params.user
+      }
     })
     res.send('Item removed from Inventory!')
   } catch (error) {

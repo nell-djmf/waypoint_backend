@@ -20,7 +20,6 @@ const GetQuestLog = async (req, res) => {
         },
       ]
     })
-
     res.send(questlog)
   } catch (error) {
     throw error

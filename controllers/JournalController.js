@@ -54,7 +54,9 @@ const UpdateEntry = async (req, res) => {
 const DeleteEntry = async (req, res) => {
   try {
     await Entry.destroy({
-      where: { id: req.params.entry }
+      where: { 
+        id: req.params.entry 
+      }
     })
     res.send('Entry deleted!')
   } catch (error) {
