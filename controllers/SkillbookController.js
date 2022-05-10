@@ -22,8 +22,23 @@ const CreateNewSkillbook = async (req, res) => {
   }
 }
 
+const UpdateSkillbook = async (req, res) => {
+  try {
+    await Skillbook.update(req.body, {
+      where: {
+        userId: req.params.user
+      }
+    }
+  )
+    res.send('Skills upgraded!')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 module.exports = {
 	GetSkillbook,
-  CreateNewSkillbook
+  CreateNewSkillbook,
+  UpdateSkillbook
 }
