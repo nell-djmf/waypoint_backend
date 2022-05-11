@@ -3,7 +3,7 @@ const controller = require('../controllers/UserController')
 
 Router.get('/', controller.GetUsers)
 Router.get('/:me', controller.GetOneUser)
-Router.put('/update/:user', controller.GainXPLevel)
+
 
 
 module.exports = Router

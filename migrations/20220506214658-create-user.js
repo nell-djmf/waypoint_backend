@@ -24,14 +24,6 @@ module.exports = {
           isEmail: true
         }
       },
-      xp: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      level: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
       avatar: {
         type: Sequelize.STRING,
         allowNull: false

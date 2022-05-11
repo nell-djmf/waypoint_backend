@@ -13,6 +13,8 @@ module.exports = {
         int: 1,
         wis: 1,
         cha: 1,
+        xp: 0,
+        level: 1,
         userId: users[Math.floor(Math.random() * users.length)].id,
         createdAt: new Date(),
         updatedAt: new Date()

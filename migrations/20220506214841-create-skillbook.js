@@ -26,6 +26,12 @@ module.exports = {
       cha: {
         type: Sequelize.INTEGER
       },
+      xp: {
+        type: Sequelize.INTEGER
+      },
+      level: {
+        type: Sequelize.INTEGER
+      },
       userId: {
         type: Sequelize.INTEGER
       },

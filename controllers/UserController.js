@@ -19,22 +19,8 @@ const GetOneUser = async (req, res) => {
   }
 }
 
-const GainXPLevel = async (req, res) => {
-  try {
-    const levelUp = await User.update(req.body, {
-        where: {
-          id: req.params.user
-        }
-      }
-    )
-    res.send(levelUp)
-  } catch (error) {
-    throw error
-  }
-}
 
 module.exports = {
 	GetUsers,
-  GetOneUser,
-  GainXPLevel
+  GetOneUser
 }
