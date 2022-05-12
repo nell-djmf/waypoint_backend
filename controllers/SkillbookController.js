@@ -13,14 +13,27 @@ const GetSkillbook = async (req, res) => {
 
 const CreateNewSkillbook = async (req, res) => {
   try {
-    const newSkills = await Skillbook.create(req.body, {
-    fields:["con", "str", "dex", "int", "wis", "cha", "userId"]
+    const newSkills = await Skillbook.findOrCreate({
+    where: {
+      userId: req.params.user
+    },
+    defaults: {
+      con: 1,
+      str: 1,
+      dex: 1,
+      int: 1,
+      wis: 1,
+      cha: 1,
+      xp: 0,
+      level: 1
+    }
   })
     res.send(newSkills)
   } catch (error) {
     console.log(error)
   }
 }
+
 
 const UpdateSkillbook = async (req, res) => {
   try {
