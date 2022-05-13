@@ -52,6 +52,26 @@ const RemoveFromInventory = async (req, res) => {
   }
 }
 
+//BULK DELETE ATTEMPT
+// const RemoveFromInventory = async (req, res) => {
+//   try {
+//     let trash = req.body
+//     console.log(req.body)
+//     const toBeDeleted = trash.map(item => item.itemId)
+//     console.log(toBeDeleted)
+//     await Inventory.destroy({
+//       where: {
+//         [Op.and]: {
+//           itemId: toBeDeleted
+//         }
+//       }
+//     })
+//     res.send('Item removed from Inventory!')
+//   } catch (error) {
+//     console.log(error)
+//   }
+// }
+
 
 module.exports = {
 	GetAllItems,
