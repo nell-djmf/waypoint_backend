@@ -29,7 +29,7 @@ const GetUserJournal = async (req, res) => {
 const CreateNewEntry = async (req, res) => {
   try {
     const newEntry = await Entry.create(req.body, {
-    fields:["date", "title", "content", "type", "userId"]
+    fields:["date", "title", "content", "userId"]
   })
     res.send(newEntry)
   } catch (error) {

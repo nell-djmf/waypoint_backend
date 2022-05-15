@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       desc: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       icon: {
         type: Sequelize.STRING

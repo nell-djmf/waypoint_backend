@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   Milestone.init({
     title: DataTypes.STRING,
-    desc: DataTypes.STRING,
+    desc: DataTypes.TEXT,
     icon: DataTypes.STRING,
   }, {
     sequelize,
