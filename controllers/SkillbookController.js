@@ -1,10 +1,25 @@
-const { Skillbook } = require('../models')
+const { Skillbook, User } = require('../models')
 
 const GetSkillbook = async (req, res) => {
   try {
     const skills = await Skillbook.findOne({where: {
       userId: req.params.id
     }})
+    res.send(skills)
+  } catch (error) {
+    throw error
+  }
+}
+
+const GetAllSkillbook = async (req, res) => {
+  try {
+    const skills = await Skillbook.findAll({
+      include: [
+				{
+          model: User
+        },
+      ]
+    })
     res.send(skills)
   } catch (error) {
     throw error
@@ -53,5 +68,6 @@ const UpdateSkillbook = async (req, res) => {
 module.exports = {
 	GetSkillbook,
   CreateNewSkillbook,
-  UpdateSkillbook
+  UpdateSkillbook,
+  GetAllSkillbook
 }
